@@ -1,0 +1,22 @@
+import os
+from dotenv import load_dotenv
+from netmiko import ConnectHandler
+import json
+load_dotenv()
+
+user = os.environ.get('username')
+password = os.environ.get('password')
+sec = os.environ.get('secret')
+
+switch = {"device_type":"cisco_ios",
+          "ip":
+          "username": user,
+          "password": password,
+          "secret": sec}
+try:
+    connection = ConnectHandler(**switch)
+    c.enable()
+    interfaces = connection.send_command('', use_textfsm = True)
+    convert_to_json = json.dumps(interfaces, indent=2)
+except Exception as e:
+    print(e)
