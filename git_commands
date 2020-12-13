@@ -1,0 +1,13 @@
+git config --global user.config
+git config --global user.email
+git status
+git add
+git rm -f 
+git commit 
+git log
+git diff
+git remote add origin master
+git push origin master
+git fetch origin master
+ 
+Adding some random text to check if git is wokring
